@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Git Pull') {
+            steps {
+                // Checkout the repository
+                checkout scm
+                
+                // Perform a Git pull to update the repository
+                script {
+                    sh 'git pull'
+                }
+            }
+        }
+        
+        // Add more stages as needed
+    }
+    
+    // Define post-build actions if necessary
+}
